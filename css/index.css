@@ -139,7 +139,6 @@ button:hover{
 
 @media (max-width:500px) {
     .artists-container {
-        background-color: red;
         flex-direction: column;
         justify-content: center;
 
