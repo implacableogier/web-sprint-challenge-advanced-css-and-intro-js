@@ -239,7 +239,7 @@ who were born in and died in 20th century (1900-2000) example born in 1901 and d
 died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-  console.log("hello does this work?")
+  //console.log("hello does this work?")
   //create an empty array to push artist names to
   const bornIn20s = [];
   //create a loop that iterates through the entire array checking for values above 1899 and below 2001, and returning 
