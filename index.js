@@ -227,19 +227,39 @@ console.log(artists[8].name);
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(array, index) {
-    /* code here */
+    let artistInfo = array[index];
+    return `The artist at index ${index} is ${artistInfo.name}`;
   }
-  
+  console.log(getArtistByIndex(artists, 8))
   /**
 
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
+/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists 
+who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and 
+died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */){
+function get20s(array){
+  console.log("hello does this work?")
+  //create an empty array to push artist names to
+  const bornIn20s = [];
+  //create a loop that iterates through the entire array checking for values above 1899 and below 2001, and returning 
+  //artists name if they fall within the parameters
+  for (let i = 0; i < array.length; i++) {
 
-  /* Code here */
-
+    const years = array[i].years.split(' - ')
+    
+    if (Number(years[0]) >= 1900 && Number(years[1]) <= 2000) {
+      bornIn20s.push(array[i].name);
+    }
+  }
+  console.log(bornIn20s);
 }
+get20s(artists);
+
+
+
+
+
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
