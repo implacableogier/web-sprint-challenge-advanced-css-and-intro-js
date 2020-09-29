@@ -270,16 +270,22 @@ get20s(artists);
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19. 
  * 
- * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
+ * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove 
+ * artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(array, indexLocation) {
+    console.log(array.length)
+    
+    array.splice(indexLocation,1)
+    
+    console.log(array.length)
   }
-  
+  removeArtist(artists, 0)
  
 
 /**
-/* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
+/* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the 
+artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
 
 For example, you could add the following information: 
 id: 20,
@@ -291,11 +297,21 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
+function addArtist(array, id, name, years, genre, nationality, bio){
+  
 
-    /* Code here */
 
+    array.push({
+    id: id,
+    name: name,
+    years: years,
+    genre: genre,
+    nationality: nationality,
+    bio: bio
+  })
+  console.log(array)
   }
+  addArtist(artists, 20, 'Jason', '1988 - 2020', 'Web Development', 'White', 'I like to climb and game' );
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -305,12 +321,19 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(array){
+  const prolificArtists = [];
 
-  /* Code here */
-
+  for (let i = 0; i < array.length; i++) {
+    
+    if (array[i].paintings >= 100) {
+      
+      prolificArtists.push(array[i].name)
+    }
+  }
+  console.log(prolificArtists)
 }
-
+lotsOfArt(artists)
 
 
 // 🎨🎨 STRETCH 🎨🎨//
